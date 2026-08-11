@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Word Revealer</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 2rem;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .hidden {
+            display: none;
+        }
+        #magicWord {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        #errorMessage {
+            margin-top: 1rem;
+            color: #d32f2f;
+        }
+        input, button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Unlock the Secret</h2>
+    <p>Please enter the password to reveal the magic word.</p>
+    
+    <input type="password" id="pwdInput" placeholder="Enter password here">
+    <button onclick="verifyPassword()">Submit</button>
+
+    <div id="magicWord" class="hidden">Complete Name of the Newly Elected Sultan Kudarat State University President.</div>
+    <div id="errorMessage" class="hidden">Incorrect password. Try again.</div>
+
+    <script>
+        function verifyPassword() {
+            const correctPassword = "animo usa"; 
+            
+            const userInput = document.getElementById("pwdInput").value;
+            const magicWordDiv = document.getElementById("magicWord");
+            const errorDiv = document.getElementById("errorMessage");
+
+            if (userInput === correctPassword) {
+                magicWordDiv.classList.remove("hidden");
+                errorDiv.classList.add("hidden");
+            } else {
+                magicWordDiv.classList.add("hidden");
+                errorDiv.classList.remove("hidden");
+            }
+        }
+    </script>
+
+</body>
+</html>
