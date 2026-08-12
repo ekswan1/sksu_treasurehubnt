@@ -44,13 +44,13 @@
 
     <script>
         function verifyPassword() {
-            const correctPassword = "animo usa"; 
+            const validPasswords = ["Congrats Press Torrena", "Congrats Press Torreña"];
             
             const userInput = document.getElementById("pwdInput").value;
             const magicWordDiv = document.getElementById("magicWord");
             const errorDiv = document.getElementById("errorMessage");
 
-            if (userInput === correctPassword) {
+            if (validPasswords.includes(userInput)) {
                 magicWordDiv.classList.remove("hidden");
                 errorDiv.classList.add("hidden");
             } else {
